@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0c1732c-6e0f-461b-b13f-7409ccb9d4fe" name="Changes" comment="Домашнее задание №2">
-      <change beforePath="$PROJECT_DIR$/Gosovich_Andrei_dz_2/task_2_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gosovich_Andrei_dz_2/task_2_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gosovich_Andrei_dz_2/task_2_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gosovich_Andrei_dz_2/task_2_2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gosovich_Andrei_dz_2/task_2_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gosovich_Andrei_dz_2/task_2_3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gosovich_Andrei_dz_2/task_2_4.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gosovich_Andrei_dz_2/task_2_4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gosovich_Andrei_dz_2/task_2_5.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gosovich_Andrei_dz_2/task_2_5.py" afterDir="false" />
-    </list>
+    <list default="true" id="e0c1732c-6e0f-461b-b13f-7409ccb9d4fe" name="Changes" comment="Домашнее задание №2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
