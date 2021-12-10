@@ -8,7 +8,8 @@ __author__ = 'Госович Андрей Михайлович'
 # ●	15 ** 2
 
 math_expressions = [15 * 3, 15 / 3, 15 // 2, 15 ** 2]
-pri
 
 for expr in math_expressions:
-    print(type(expr))
+    type_string = str(type(expr)).split()[1].replace(">", "").replace("'", "")
+    print(f'Тип числа {expr}: {type_string}')
+

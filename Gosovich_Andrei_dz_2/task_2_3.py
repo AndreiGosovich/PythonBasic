@@ -1,6 +1,8 @@
 
 __author__ = 'Госович Андрей Михайлович'
 
+# 3.	*(вместо задачи 2) Решить задачу 2 не создавая новый список
+# (как говорят, in place). Эта задача намного серьёзнее, чем может сначала показаться.
 # 2.	Дан список:
 # ['в', '5', 'часов', '17', 'минут', 'температура', 'воздуха', 'была', '+5', 'градусов']
 # Необходимо его обработать — обособить каждое целое число (вещественные не трогаем)
@@ -18,24 +20,45 @@ original_list = ['в', '5', 'часов', '17', 'минут', 'температ�
 new_list = []
 output_string = ""
 
-print(original_list, id(original_list))
+# первый вариант
+print("Первый вариант")
+print("Оригинальная строка", chr(10), original_list, id(original_list))
 
-for value_of_list in original_list:
+for i, value_of_list in enumerate(original_list):
     if value_of_list.isdigit():
-        new_list.append('"')
-        new_list.append(f"{int(value_of_list):02d}")
-        new_list.append('"')
+        original_list[i] = f'"{int(value_of_list):02d}"'
     elif value_of_list[0] in ("+", "-") and value_of_list[1:].isdigit():
-        new_list.append('"')
-        new_list.append(f"{value_of_list[0]}{int(value_of_list[1:]):02d}")
-        new_list.append('"')
-    else:
-        new_list.append(value_of_list)
+        original_list[i] = f'"{value_of_list[0]}{int(value_of_list):02d}"'
 
-print(new_list, id(new_list))
+print("Изменённая оригинальная строка", chr(10), original_list, id(original_list))
+print("Результат", chr(10), " ".join(original_list).capitalize())
 
+##################
+# второй вариант #
+##################
+original_list = ['в', '5', 'часов', '17', 'минут', 'температура', 'воздуха', 'была', '+5', 'градусов']
+output_string = ""
+
+# print(original_list, id(original_list))
+i = 0
+while i < len(original_list):
+    if original_list[i].isdigit():
+        original_list.insert(i, '"')
+        i += 1
+        original_list[i] = f"{int(original_list[i]):02d}"
+        i += 1
+        original_list.insert(i, '"')
+    elif original_list[i][0] in ("+", "-") and original_list[i][1:].isdigit():
+        original_list.insert(i, '"')
+        i += 1
+        original_list[i] = f"{original_list[i][0]}{int(original_list[i][1:]):02d}"
+        i += 1
+        original_list.insert(i, '"')
+    i += 1
+
+# склеить значения, учитывая, что после открывающихся и перед закрывающимися пробел не ставится.
 is_space = True
-for value_of_list in new_list:
+for value_of_list in original_list:
     output_string += value_of_list
     if is_space and value_of_list != '"':
         output_string += " "
@@ -45,22 +68,8 @@ for value_of_list in new_list:
         output_string += " "
         is_space = True
 
-    # is_digit = False
+print(chr(10), "Второй вариант", sep="")
+print("Изменённая оригинальная строка", chr(10), original_list, id(original_list))
+print("Результат", chr(10), output_string.capitalize())
 
-    # for j in range(0, len(value_of_list)):
-    #     if (j == 0 and value_of_list[j] in ('+', '-')) or 48 <= ord(value_of_list[j]) <= 57:
-    #         is_digit = True
-    #     else:
-    #         is_digit = False
-    #         break
-#
-#     if is_digit:
-#         if value_of_list[0] == '+':
-#             original_list[i] = f'"+{int(value_of_list):02d}"'
-#         else:
-#             original_list[i] = f'"{int(value_of_list):02d}"'
-#
-# print(" ".join(new_list))
-# print(original_list, id(original_list))
-print(output_string.capitalize())
-# print(" ".join(original_list).title())
+# судя по id, решением является первый вариант.
