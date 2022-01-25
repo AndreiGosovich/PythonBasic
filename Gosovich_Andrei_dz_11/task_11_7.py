@@ -19,7 +19,7 @@ class ComplexNumber:
             self.__number = str(number)
             self.__a = CHEK_STR.match(str(number)).groupdict()["first"]
             self.__b = CHEK_STR.match(str(number)).groupdict()["second"] \
-                if CHEK_STR.match(str(number)).groupdict()["second"] else "0j"
+                if CHEK_STR.match(str(number)).groupdict()["second"] else "0i"
 
     def __str__(self):
         return f"{self.__a} + {self.__b}"
@@ -33,7 +33,7 @@ class ComplexNumber:
         self.__number = number
         self.__a = CHEK_STR.match(str(number)).groupdict()["first"]
         self.__b = CHEK_STR.match(str(number)).groupdict()["second"] \
-            if CHEK_STR.match(str(number)).groupdict()["second"] else "0j"
+            if CHEK_STR.match(str(number)).groupdict()["second"] else "0i"
 
     def __add__(self, other):
         return ComplexNumber(f"{float(self.__a) + float(other.__a):,g} + "
